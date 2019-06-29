@@ -24,15 +24,15 @@ from rest_framework import permissions
 
 # Include docs in multiple patterns as swagger and redoc
 schema_view = get_schema_view(
-   openapi.Info(
-      title="Service area provider API",
-      default_version='v1',
-      description="Service area provider api documentation",
-      contact=openapi.Contact(email="gsb@gsb-eng.com"),
-      license=openapi.License(name="BSD License"),
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
+    openapi.Info(
+        title="Service area provider API",
+        default_version='v1',
+        description="Service area provider api documentation",
+        contact=openapi.Contact(email="gsb@gsb-eng.com"),
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
 )
 
 

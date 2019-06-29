@@ -65,9 +65,7 @@ class ServiceAreaViewSet(viewsets.ModelViewSet):
 
 class SearchServiceAreaViewSet(ListAPIView):
     """
-    Service area related api handler.
-
-    Four http methods are allowed to act on service areas.
+    Service area search related api handler.
 
     GET    -> To get the service areas list with pagination enabled.
     """

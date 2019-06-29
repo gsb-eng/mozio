@@ -2,13 +2,16 @@
 Service area related api's.
 """
 
+from django.contrib.gis.geos import Point
+
 from rest_framework import viewsets
+from rest_framework.generics import ListAPIView
 
 from mozio.pagination import StandardResultsSetPagination
 
 from service_areas_api.models import Provider, ServiceArea
 from service_areas_api.serializers import (
-    ProviderSerializer, ServiceAreaSerializer
+    ProviderSerializer, ServiceAreaSerializer, SearchSearviceAreaSerializer
 )
 
 
@@ -58,3 +61,23 @@ class ServiceAreaViewSet(viewsets.ModelViewSet):
     # pagination_class enables the pagination for GET list of providers.
     pagination_class = StandardResultsSetPagination
     http_method_names = HTTP_METHODS_ALLOWED
+
+
+class SearchServiceAreaViewSet(ListAPIView):
+    """
+    Service area related api handler.
+
+    Four http methods are allowed to act on service areas.
+
+    GET    -> To get the service areas list with pagination enabled.
+    """
+    model = ServiceArea
+    serializer_class = SearchSearviceAreaSerializer
+
+    # pagination_class enables the pagination for GET list of providers.
+    pagination_class = StandardResultsSetPagination
+    http_method_names = ['get']
+
+    def get_queryset(self):
+        point = Point(float(self.kwargs['lng']), float(self.kwargs['lat']))
+        return ServiceArea.objects.filter(area__contains=point)

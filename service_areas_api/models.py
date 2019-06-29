@@ -27,6 +27,9 @@ class Provider(models.Model):
         verbose_name_plural = 'providers'
         db_table = 'provider'
 
+    def __str__(self):
+        return str(self.name)
+
 
 class ServiceArea(gis_models.Model):
     name = gis_models.CharField(max_length=250)

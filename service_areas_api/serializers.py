@@ -35,3 +35,17 @@ class ServiceAreaSerializer(GeoFeatureModelSerializer):
         model = ServiceArea
         fields = '__all__'
         geo_field = 'area'
+
+
+class SearchSearviceAreaSerializer(serializers.ModelSerializer):
+    """
+    Service area search serializer.
+    """
+    provider = serializers.StringRelatedField()
+
+    class Meta:
+        """
+        Serializer meta definitions.
+        """
+        model = ServiceArea
+        fields = ('name', 'price', 'provider')

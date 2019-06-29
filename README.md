@@ -15,7 +15,32 @@ Swagger: http://mozio.gsb-eng.com/docs/v1/swagger
 Redoc: http://mozio.gsb-eng.com/docs/v1/redoc
 
 
-# Rquired Software
+# Development Steps 
+
+# Using Docker
+
+Build the application
+
+`make build`
+
+Running tests.
+
+`make tests`
+
+Running the local server on `127.0.0.0:8000`
+
+`make serve`
+
+Running lint checker
+
+`make lint`
+
+Stop the containers.
+
+`make stop`
+
+
+# Using virtualenv
 
 
 ```
@@ -24,7 +49,8 @@ PostgreSQL
 Postgis
 ```
 
-You will need to install all the requirements listed in requirements.txt using  pip:
+You will need to create a virtualenv and install all the requirements listed in requirements.txt using  pip:
+
 ```
 $ pip install -r requirements.txt
 ```

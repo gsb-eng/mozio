@@ -8,10 +8,11 @@ Services has been deployed over AWS, can be access with below url.
 
 http://mozio.gsb-eng.com/api/v1/
 
-API Documentation:
+# API Documentation:
 
-http://mozio.gsb-eng.com/docs/v1/swagger
-http://mozio.gsb-eng.com/docs/v1/redoc
+Swagger: http://mozio.gsb-eng.com/docs/v1/swagger
+
+Redoc: http://mozio.gsb-eng.com/docs/v1/redoc
 
 
 # Rquired Software

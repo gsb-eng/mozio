@@ -1,5 +1,6 @@
 
-##Mozio service providers api##
+Mozio service providers api
+===========================
 
 Service provider management services has been implemented using `Python` and `Django` along with `PostGIS`, Providers can add geo spacial polygon data to the db and that can be accessed and updated with endpoints.
 
@@ -13,7 +14,8 @@ http://mozio.gsb-eng.com/docs/v1/swagger
 http://mozio.gsb-eng.com/docs/v1/redoc
 
 
-###Rquired Software###
+# Rquired Software
+
 
 ```
 Python 3.x
@@ -26,10 +28,10 @@ You will need to install all the requirements listed in requirements.txt using  
 $ pip install -r requirements.txt
 ```
 
-###Run server###
+# Run server
 
 `python manage.py runserver`
 
-###Tests###
+# Tests
 
 `python manage.py test`
